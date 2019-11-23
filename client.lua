@@ -4,7 +4,7 @@ function MFD:Start()
   while not ESX do Citizen.Wait(0); end
   while not ESX.IsPlayerLoaded() do Citizen.Wait(0); end
 
-  self.CurJob = ESX.GetPlayerData().job.label
+  self.CurJob = ESX.GetPlayerData().job.name
   --print("MF_DnaTracker:Start() -- Successful")
   if self.dS and self.cS then
     Citizen.CreateThread(function(...) self:Update(...); end)
@@ -18,7 +18,7 @@ function MFD:PositionUpdate()
   while self.dS and self.cS do
     Citizen.Wait(0)
     tick = tick + 1
-    if tick % 200 == 0 then ESX.TriggerServerCallback('MF_DnaTracker:GetJob', function(job) self.CurJob = job.label; end); end
+    if tick % 200 == 0 then ESX.TriggerServerCallback('MF_DnaTracker:GetJob', function(job) self.CurJob = job.name; end); end
     if self.CurJob == self.AmbulanceJob or self.CurJob == self.PoliceJob then
       local plyPed = GetPlayerPed(-1)
       local plyPos = GetEntityCoords(plyPed)
