@@ -13,8 +13,8 @@ MDF.BloodObject = "p_bloodsplat_s"
 MDF.ResidueObject = "w_pi_flaregun_shell"
 
 -- JOB Database Table: LABEL
-MDF.PoliceJob = "LSPD"
-MDF.AmbulanceJob = "LSPD"
+MDF.PoliceJob = "police"
+MDF.AmbulanceJob = "ambulance"
 
 MDF.DNAAnalyzePos = vector3(454.69, -979.95, 30.68)
 MDF.AmmoAnalyzePos = vector3(461.17, -979.74, 30.68)
